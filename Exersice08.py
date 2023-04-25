@@ -43,22 +43,6 @@ for a in range(0, len(lines), 5):  # Loop over the lines using a for loop and pr
 print()
 
 # Task 2
-""" counter = 0
-
-for b in range(1, len(lines)):
-  splitlines = lines[b].split(",")
-  print(splitlines[3])
-  
-  if splitlines[3].endswith(".co.uk") == True:
-    counter += 1
-    
-  if splitlines[1].startswith("k") or splitlines[2].startswith("k"):
-    counter += 1
-print()
-print("Number of users with email ending with .co.uk in it: ",counter)
-print()
-print("Number of users whose first or last name starts with 'K': ", counter) """
-
 
 for line in lines:  # Split each line by the commas, saving the result to a variable
     email_only = line.split(",")
@@ -68,7 +52,7 @@ print()
 
 # Task 3
 
-print(" Number of users with email ending with .co.uk in it: ", data.count(".co.uk"))
+print("Number of users with email ending with .co.uk in it: ", data.count(".co.uk"))
 
 print()
 
@@ -79,3 +63,14 @@ for line in lines:
     if name[1].upper().startswith('K') or name[2].upper().startswith('K'):
         counter += 1
 print(f"Number of users whose first or last name starts with 'K': ", counter)
+
+# Task 4
+print()
+
+short = data.split('\n')
+
+for c in range(1,len(short)):
+    name = short[c].split(",")
+    ip = name[4].split(".")
+
+    print(name[1], name[2][0]+"."+","+ip[0]+"."+ip[1]+".xxx.xxx")
